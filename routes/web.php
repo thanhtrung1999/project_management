@@ -52,3 +52,5 @@ Route::group(['prefix' => 'teacher', 'middleware' => 'checkLogin'], function () 
     Route::get('download-document/{document}', [ProjectController::class, 'download'])
         ->name('teacher.document.download');
 });
+
+// teacher/projects/

@@ -16,7 +16,6 @@ class DashboardController extends Controller
 
     public function index()
     {
-        // dd(getLoggedInUser()->notifications[0]->data);
         return view('index');
     }
 }

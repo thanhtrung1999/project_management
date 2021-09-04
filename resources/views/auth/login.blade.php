@@ -20,32 +20,32 @@
                 @endif
                 <form action="" method="post">
                     @csrf
-                    <div class="input-group mb-3">
+                    <div class="input-group @if(!$errors->has('email')) mb-3 @endif">
                         <input type="email" name="email" value="{{ old('email') }}" id="email" class="form-control" placeholder="Nhập email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
-                        @error('email')
-                            <div class="alert alert-danger">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </div>
-                        @enderror
                     </div>
-                    <div class="input-group mb-3">
+                    @error('email')
+                        <div class="alert alert-danger">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </div>
+                    @enderror
+                    <div class="input-group @if(!$errors->has('password')) mb-3 @endif">
                         <input type="password" name="password" value="" id="password" class="form-control" placeholder="Nhập mật khẩu">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
-                        @error('password')
-                            <div class="alert alert-danger">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </div>
-                        @enderror
                     </div>
+                    @error('password')
+                        <div class="alert alert-danger">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </div>
+                    @enderror
                     <div class="row">
                         {{-- <div class="col-8">
                             <div class="icheck-primary">
